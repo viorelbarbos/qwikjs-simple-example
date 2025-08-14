@@ -1,0 +1,35 @@
+.developers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 24px;
+  max-width: none;
+  width: 100%;
+}
+
+.developers:empty::before {
+  content: "No developers added yet. Click 'Add Developer' to get started!";
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-style: italic;
+  background: #f9fafb;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .developers {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .developers {
+    padding: 12px;
+  }
+}

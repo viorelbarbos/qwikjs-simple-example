@@ -1,0 +1,39 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+  color: #374151;
+  font-size: 14px;
+}
+
+.label.checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+.input {
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.helper-text {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
