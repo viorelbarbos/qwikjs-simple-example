@@ -31,13 +31,12 @@ Organize imports in components following this specific order:
 ```tsx
 // 1. General imports (React-like, utilities, libraries)
 import { component$, useSignal, useComputed$, useTask$ } from '@builder.io/qwik';
-import { $, QRL } from '@builder.io/qwik';
 
-// 2. Context imports
-import { useDeveloper } from '~/contexts/use-developer';
-
-// 3. Hooks (custom hooks)
+// 2. Hooks (custom hooks)
 import { useCustomHook } from '~/hooks/use-custom-hook';
+
+// 3. Context imports
+import { useDeveloper } from '~/contexts/use-developer';
 
 // 4. Helpers and utilities
 import { formatDate, validateEmail } from '~/utils/helpers';
