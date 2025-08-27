@@ -1,15 +1,11 @@
-import { $, component$, useStore } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import { Link, type DocumentHead } from '@builder.io/qwik-city';
-import { Modal, Label, Tabs } from '@qwik-ui/headless';
-import AddOrEditModal from '~/components/add-or-edit-developer/add-or-edit-developer';
-import { useDeveloper } from '~/contexts/use-developer';
-export default component$(() => {
-  const { devStore: dataStore } = useDeveloper();
 
+export default component$(() => {
   return (
     <>
       Go to{' '}
-      <Link href="/developers" class="text-blue-500 hover:underline">
+      <Link href="/devs" class="text-blue-500 hover:underline">
         Developers
       </Link>
     </>

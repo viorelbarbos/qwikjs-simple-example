@@ -12,12 +12,12 @@
   grid-column: 1 / -1;
   text-align: center;
   padding: 60px 20px;
-  color: #6b7280;
+  color: var(--color-gray-500);
   font-style: italic;
-  background: #f9fafb;
-  border: 2px dashed #d1d5db;
-  border-radius: 12px;
-  font-size: 16px;
+  background: var(--color-background-tertiary);
+  border: 2px dashed var(--color-border-dark);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
 }
 
 @media (max-width: 768px) {

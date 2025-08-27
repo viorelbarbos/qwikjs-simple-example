@@ -1,0 +1,15 @@
+/* Simple Spacing Utilities */
+
+.form-spacing {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-padding {
+  padding: 24px;
+}
+
+.modal-padding {
+  padding: 32px;
+}

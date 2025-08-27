@@ -2,8 +2,7 @@ import { component$, isDev } from '@builder.io/qwik';
 import { QwikCityProvider, RouterOutlet } from '@builder.io/qwik-city';
 import { RouterHead } from './components/router-head/router-head';
 
-import './global.css';
-import { FormContextProvider } from './contexts/use-developer';
+import './styles/index.css';
 
 export default component$(() => {
   /**
@@ -26,9 +25,7 @@ export default component$(() => {
         <RouterHead />
       </head>
       <body lang="en">
-        <FormContextProvider>
-          <RouterOutlet />
-        </FormContextProvider>
+        <RouterOutlet />
       </body>
     </QwikCityProvider>
   );

@@ -1,10 +1,10 @@
 import { $, component$ } from '@builder.io/qwik';
-import { Modal } from '@qwik-ui/headless';
 
 import { useDeveloper } from '~/contexts/use-developer';
 
 import styles from './add-or-edit-developer.module.css';
 
+import { Modal } from '@qwik-ui/headless';
 import Input from '../form/input';
 
 export default component$(() => {
@@ -22,16 +22,18 @@ export default component$(() => {
 
   return (
     <Modal.Root bind:show={isAddOrEditDeveloperOpen} onClose$={clearDeveloper}>
-      <Modal.Trigger class={styles.modalTrigger}>+ Add Developer</Modal.Trigger>
-      <Modal.Panel class={styles.modalPanel}>
-        <div class={styles.formContainer}>
-          <h2 class={styles.formTitle}>
+      <Modal.Trigger class={styles['add-or-edit-developer__trigger']}>
+        + Add Developer
+      </Modal.Trigger>
+      <Modal.Panel class={styles['add-or-edit-developer__panel']}>
+        <div class={styles['add-or-edit-developer__container']}>
+          <h2 class={styles['add-or-edit-developer__title']}>
             {developer.id ? 'Edit Developer' : 'Add New Developer'}
           </h2>
 
           <form
             id="add-or-edit-developer-form"
-            class={styles.form}
+            class={styles['add-or-edit-developer__form']}
             preventdefault:submit
             onSubmit$={saveForm}
           >
@@ -88,13 +90,18 @@ export default component$(() => {
             />
 
             {developer.frameworks.length > 0 ? (
-              <div class={styles.frameworkList}>
+              <div class={styles['add-or-edit-developer__frameworks']}>
                 {developer.frameworks.map((framework, index) => (
-                  <div key={framework.name} class={styles.frameworkItem}>
-                    <p class={styles.frameworkName}>{framework.name}</p>
+                  <div
+                    key={framework.name}
+                    class={styles['add-or-edit-developer__framework-item']}
+                  >
+                    <p class={styles['add-or-edit-developer__framework-name']}>
+                      {framework.name}
+                    </p>
                     <button
                       type="button"
-                      class={styles.removeButton}
+                      class={styles['add-or-edit-developer__remove-button']}
                       onClick$={() => {
                         developer.frameworks.splice(index, 1);
                       }}
@@ -105,7 +112,7 @@ export default component$(() => {
                 ))}
               </div>
             ) : (
-              <div class={styles.emptyFrameworks}>
+              <div class={styles['add-or-edit-developer__frameworks--empty']}>
                 No frameworks added yet. Add some technologies this developer
                 works with!
               </div>
@@ -113,12 +120,17 @@ export default component$(() => {
           </form>
         </div>
 
-        <footer class={styles.footer}>
-          <Modal.Close class={styles.cancelButton}>Cancel</Modal.Close>
+        <footer class={styles['add-or-edit-developer__footer']}>
+          <Modal.Close class={styles['add-or-edit-developer__button']}>
+            Cancel
+          </Modal.Close>
           <button
             type="submit"
             form="add-or-edit-developer-form"
-            class={styles.saveButton}
+            class={[
+              styles['add-or-edit-developer__button'],
+              styles['add-or-edit-developer__button--primary'],
+            ]}
           >
             {developer.id ? 'Update Developer' : 'Add Developer'}
           </button>

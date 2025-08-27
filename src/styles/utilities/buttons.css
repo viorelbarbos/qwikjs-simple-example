@@ -1,0 +1,25 @@
+/* Simple Button Utilities */
+
+.btn {
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: 12px 20px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-blue) 0%, var(--color-primary-purple) 100%);
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}

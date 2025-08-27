@@ -1,0 +1,15 @@
+/* Simple Card Utilities */
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px var(--color-shadow-medium), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border-light);
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px var(--color-shadow-medium), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}

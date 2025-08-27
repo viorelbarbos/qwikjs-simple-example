@@ -1,5 +1,5 @@
 declare global {
-  type devStore = {
+  type DevStore = {
     developers: Developer[];
   };
 
@@ -7,9 +7,11 @@ declare global {
     id: string;
     name: string;
     isJunior: boolean;
-    frameworks: {
-      name: string;
-    }[];
+    frameworks: Framework[];
+  };
+
+  type Framework = {
+    name: string;
   };
 }
 

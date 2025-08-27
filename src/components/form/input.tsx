@@ -13,10 +13,14 @@ type InputProps = {
 export default component$<InputProps>(
   ({ label, helperText, cssClass, input }) => {
     return (
-      <Label class={[css.label, cssClass, input?.type && css[input.type]]}>
+      <Label
+        class={[css['input__label'], cssClass, input?.type && css[input.type]]}
+      >
         {label}
         <input {...input} class={[css.input, input.class]} />
-        {helperText && <small class={css['helper-text']}>{helperText}</small>}
+        {helperText && (
+          <small class={css['input__helper-text']}>{helperText}</small>
+        )}
       </Label>
     );
   }

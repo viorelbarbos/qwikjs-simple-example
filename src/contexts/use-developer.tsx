@@ -10,10 +10,11 @@ import {
   useSignal,
   useStore,
 } from '@builder.io/qwik';
+
 import { developers } from '~/mock-data/developers';
 
 type DeveloperContext = {
-  devStore: devStore;
+  devStore: DevStore;
   developer: Developer;
   isAddOrEditDeveloperOpen: Signal<boolean>;
   createOrEdit: QRL<() => Promise<boolean>>;
@@ -22,10 +23,10 @@ type DeveloperContext = {
   clearDeveloper: QRL<() => void>;
 };
 
-const formContextId = createContextId<DeveloperContext>('FormContext');
+const developerContextId = createContextId<DeveloperContext>('FormContext');
 
-export const FormContextProvider = component$(() => {
-  const devStore = useStore<devStore>({
+export const DeveloperContextProvider = component$(() => {
+  const devStore = useStore<DevStore>({
     developers: developers,
   });
 
@@ -106,7 +107,7 @@ export const FormContextProvider = component$(() => {
     }
   });
 
-  useContextProvider(formContextId, {
+  useContextProvider(developerContextId, {
     devStore,
     developer,
     isAddOrEditDeveloperOpen,
@@ -120,7 +121,7 @@ export const FormContextProvider = component$(() => {
 });
 
 export const useDeveloper = () => {
-  const context = useContext(formContextId);
+  const context = useContext(developerContextId);
   if (!context) {
     throw new Error('useForm must be used within a FormContextProvider');
   }
